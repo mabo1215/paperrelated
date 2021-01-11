@@ -56,7 +56,7 @@ $$
 P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)
 $$
 
-[解析]：[TODO]
+[解析]：略
 
 
 
@@ -66,9 +66,9 @@ $$
 P\left(f\left(x_{1}, \ldots, x_{m}\right)-\mathbb{E}\left(f\left(x_{1}, \ldots, x_{m}\right)\right) \geqslant \epsilon\right) \leqslant \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
 $$
 
-[解析]：McDiarmid不等式：首先解释下前提条件：$
+[解析]：McDiarmid不等式：首先解释下前提条件：$$
 \sup _{x_{1}, \ldots, x_{m}, x_{i}^{\prime}}\left|f\left(x_{1}, \ldots, x_{m}\right)-f\left(x_{1}, \ldots, x_{i-1}, x_{i}^{\prime}, x_{i+1}, \ldots, x_{m}\right)\right| \leqslant c_{i}
-$ 表示当函数$f$某个输入$x_i$变到$x_i^\prime$的时候，其变化的上确$\sup$仍满足不大于$c_i$。所谓上确界sup可以理解成变化的极限最大值，可能取到也可能无穷逼近。当满足这个条件时，McDiarmid不等式指出：函数值$f(x_1,\dots,x_m)$和其期望值$\mathbb{E}\left(f(x_1,\dots,x_m)\right)$也相近，从概率的角度描述是：**它们之间差值不小于$\epsilon$**这样的事件出现的概率不大于$
+$$ 表示当函数$f$某个输入$x_i$变到$x_i^\prime$的时候，其变化的上确$\sup$仍满足不大于$c_i$。所谓上确界sup可以理解成变化的极限最大值，可能取到也可能无穷逼近。当满足这个条件时，McDiarmid不等式指出：函数值$f(x_1,\dots,x_m)$和其期望值$\mathbb{E}\left(f(x_1,\dots,x_m)\right)$也相近，从概率的角度描述是：它们之间差值不小于$\epsilon$这样的事件出现的概率不大于$
 \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
 $，可以看出当每次变量改动带来函数值改动的上限越小，函数值和其期望越相近。
 
@@ -78,7 +78,7 @@ $$
 P\left(\left|f\left(x_{1}, \ldots, x_{m}\right)-\mathbb{E}\left(f\left(x_{1}, \ldots, x_{m}\right)\right)\right| \geqslant \epsilon\right) \leqslant 2 \exp \left(\frac{-2 \epsilon^{2}}{\sum_{i} c_{i}^{2}}\right)
 $$
 
-[解析]：[TODO]
+[解析]：略
 
 
 
@@ -112,7 +112,7 @@ $$
 
 
 
-[解析]：先解释什么是$h$与$D$“表现一致”，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们则称$h$对$D$是一致的。即$\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right)=\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)=\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有$\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)<\prod_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}$
+[解析]：先解释什么是$h$与$D$“表现一致”，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们称问题对学习算法是一致的。即$\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right)=\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}_{i}\right)=y_{i}\right)=\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有$$\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right)\right)<\prod_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}$$
 
 
 
@@ -122,7 +122,7 @@ $$
 \begin{aligned} P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0) &<|\mathcal{H}|(1-\epsilon)^{m} \\ &<|\mathcal{H}| e^{-m \epsilon} \end{aligned}
 $$
 
-[解析]：首先解释为什么”我们事先并不知道学习算法$\mathcal{L}$会输出$\mathcal{H}$中的哪个假设“，因为一些学习算法对用一个观察集$D$的输出结果是非确定的，比如感知机就是个典型的例子，训练样本的顺序也会影响感知机学习到的假设$h$参数的值。泛化误差大于$\epsilon$且经验误差为0的假设(即在训练集上表现完美的假设)出现的概率可以表示为$P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0)$，根据式12.11，每一个这样的假设$h$都满足$P(E(h)>\epsilon \wedge \widehat{E}(h)=0)<\left(1-\epsilon \right)^m$，假设一共有$\vert\mathcal{H}\vert$这么多个这样的假设$h$，因为每个假设$h$满足$E(h)>\epsilon$和$\widehat{E}(h)=0$成立的事件是互斥的，因此总的概率$P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0)$就是这些互斥事件之和即
+[解析]：首先解释为什么”我们事先并不知道学习算法$\mathcal{L}$会输出$\mathcal{H}$中的哪个假设“，因为一些学习算法对用一个观察集$D$的输出结果是非确定的，比如感知机就是个典型的例子，训练样本的顺序也会影响感知机学习到的假设$h$参数的值。泛化误差大于$\epsilon$且经验误差为0的假设(即在训练集上表现完美的假设)出现的概率可以表示为$P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0)$，根据式12.11，每一个这样的假设$h$都满足$P(E(h)>\epsilon \wedge \widehat{E}(h)=0)<\left(1-\epsilon \right)^m$，假设一共有$\vert\mathcal{H}\vert$这么多个这样的假设$h$，因为每个假设$h$满足$E(h)>\epsilon$且$\widehat{E}(h)=0$是互斥的，因此总的概率$P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0)$就是这些互斥事件之和，即
 $$
 \begin{aligned}P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right) &=\sum_i^{\mathcal{\vert H\vert}}P\left(E(h_i)>\epsilon \wedge \widehat{E}(h_i)=0\right)\\&<|\mathcal{H}|(1-\epsilon)^{m}\end{aligned}
 $$
@@ -140,9 +140,7 @@ $$
 |\mathcal{H}| e^{-m \epsilon} \leqslant \delta
 $$
 
-[解析]：回到我们要回答的问题：到底需要多少样例才能学得目标概念$c$的有效近似。只要训练集$D$的规模能使学习算法$\mathcal{L}$以概率$1-\delta$找到目标假设的$\epsilon$近似即可。根据式12.12，学习算法$\mathcal{L}$生成的假设大于目标假设的$\epsilon$近似的概率为$P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)<\vert\mathcal{H}\vert e^{-m\epsilon}$，因此学习算法$\mathcal{L}$生成的假设落在目标假设的$\epsilon$近似的概率为$1-P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)\ge 1-\vert\mathcal{H}\vert e^{-m\epsilon}$，这个概率我们希望是$1-\delta$，因此$1-\delta\geqslant 1-\vert\mathcal{H}\vert e^{-m\epsilon}\Rightarrow\vert\mathcal{H}\vert e^{-m\epsilon}\leqslant\delta$
-
-
+[解析]：回到我们要回答的问题：到底需要多少样例才能学得目标概念$c$的有效近似。只要训练集$D$的规模能使学习算法$\mathcal{L}$以概率$1-\delta$找到目标假设的$\epsilon$近似即可。根据式12.12，学习算法$\mathcal{L}$生成的假设大于目标假设的$\epsilon$近似的概率为$P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)<\vert\mathcal{H}\vert e^{-m\epsilon}$，因此学习算法$\mathcal{L}$生成的假设落在目标假设的$\epsilon$近似的概率为$1-P\left(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0\right)\ge 1-\vert\mathcal{H}\vert e^{-m\epsilon}$，这个概率我们希望至少是$1-\delta$，因此$1-\delta\leqslant 1-\vert\mathcal{H}\vert e^{-m\epsilon}\Rightarrow\vert\mathcal{H}\vert e^{-m\epsilon}\leqslant\delta$
 
 ## 12.14
 
@@ -165,19 +163,37 @@ $$
 
 ## 12.15
 
-参见12.5
+$$
+P(\widehat{E}(h)-E(h) \geqslant \epsilon) \leqslant \exp \left(-2 m \epsilon^{2}\right)
+$$
+
+
+
+[解析]：参见12.5
 
 
 
 ## 12.16
 
-参见12.5
+$$
+P(E(h)-\widehat{E}(h) \geqslant \epsilon) \leqslant \exp \left(-2 m \epsilon^{2}\right)
+$$
+
+
+
+[解析]：参见12.5
 
 
 
 ## 12.17
 
-参见12.6
+$$
+P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)
+$$
+
+
+
+[解析]：参见12.6
 
 
 
@@ -218,7 +234,7 @@ $$
 =& P\left(\left(\left|E_{h_{1}}-\widehat{E}_{h_{1}}\right|>\epsilon\right) \vee \ldots \vee\left(| E_{h_{|\mathcal{H}|}}-\widehat{E}_{h_{|\mathcal{H}|} |>\epsilon}\right)\right) \\ \leqslant & \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) 
 \end{aligned}
 $$
-这一步是很好理解的，存在一个假设$h$使得$|E(h)-\widehat{E}(h)|>\epsilon$的概率可以表示为对假设空间内所有的假设$h_i, i\in 1,\dots,\vert\mathcal{H}\vert$，使得$\left|E_{h_{i}}-\widehat{E}_{h_{i}}\right|>\epsilon$这个事件的"或"事件。因为$P(A\vee B)=P(A) + P(B) - P(A\wedge B)$，而$P(A\wedge B)\geqslant 0$，所以最后一行的不等式成立。
+这一步是很好理解的，存在一个假设$h$使得$|E(h)-\widehat{E}(h)|>\epsilon$的概率可以表示为对假设空间内所有的假设$h_i, i\in 1,\dots,\vert\mathcal{H}\vert$，使得$\left|E_{h_{i}}-\widehat{E}_{h_{i}}\right|>\epsilon$这个事件成立的"或"事件。因为$P(A\vee B)=P(A) + P(B) - P(A\wedge B)$，而$P(A\wedge B)\geqslant 0$，所以最后一行的不等式成立。
 
 由式12.17：
 $$
@@ -315,21 +331,21 @@ $$
 $$
 \left|\mathcal{H}_{| D}\right|=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|
 $$
-由于$\mathcal{H}_{\vert D^\prime}$表示限制在样本集$D^\prime$上的假设空间$\mathcal{H}$的表达能力(即所有假设对样本集$D^\prime$所能赋予的标记种类数)，样本集$D^\prime$的数目为$m-1$，根据增长函数的定义，假设空间$\mathcal{H}$对包含$m-1$个样本的集合所能赋予的最大标记种类数为$\Pi_{\mathcal{H}}(m-1)$，因此$\vert\mathcal{H}_{\vert D^\prime}\vert \leqslant \Pi_\mathcal{H}(m-1)$。又根据数学归纳法的前提假设，有：
+由于$\mathcal{H}_{\vert D^\prime}$表示限制在样本集$D^\prime$上的假设空间$\mathcal{H}$的表达能力(即所有假设对样本集$D^\prime$所能赋予的标记种类数)，样本集$D^\prime$的大小为$m-1$，根据增长函数的定义，假设空间$\mathcal{H}$对包含$m-1$个样本的集合所能赋予的最大标记种类数为$\Pi_{\mathcal{H}}(m-1)$，因此$\vert\mathcal{H}_{\vert D^\prime}\vert \leqslant \Pi_\mathcal{H}(m-1)$。又根据数学归纳法的前提假设，有：
 $$
 \left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
 $$
-由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，因此$\vert\mathcal{H}_{D\vert D^\prime}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的数量为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D| D^{\prime}}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
+由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，又由于$\vert\mathcal{H}_{\vert D^\prime}\vert$和$\vert\mathcal{H}_{D^\prime\vert D}\vert$均为整数，因此$\vert\mathcal{H}_{D^\prime\vert D}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的大小为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
 
 假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\{\boldsymbol{x}_{m}\right\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
 $$
-\left|\mathcal{H}_{D| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
+\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
 $$
 因此：
 $$
 \begin{aligned}
 \left|\mathcal{H}_{| D}\right|&=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|\\
-&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d+1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\
+&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\
 &=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right)\right)\\
 &=\sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
 \end{aligned}
@@ -341,19 +357,43 @@ $$
 
 ## 12.25
 
-参见12.24
+$$
+\left|\mathcal{H}_{| D}\right|=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|
+$$
+
+
+
+[解析]：参见12.24
 
 
 
 ## 12.26
 
-参见12.24
+$$
+\left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}
+m-1 \\
+i
+\end{array}\right)
+$$
+
+
+
+[解析]：参见12.24
 
 
 
 ## 12.27
 
-参见12.24
+$$
+\left|\mathcal{H}_{D^{\prime} | D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}
+m-1 \\
+i
+\end{array}\right)
+$$
+
+
+
+[解析]：参见12.24
 
 
 
@@ -368,7 +408,7 @@ $$
 &={\left(\frac{m}{d}\right)}^d{\left(1+\frac{d}{m}\right)}^m\\
 &<\left(\frac{e \cdot m}{d}\right)^{d} \end{aligned}
 $$
-第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理]([https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86](https://zh.wikipedia.org/wiki/二项式定理))：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义]([https://zh.wikipedia.org/wiki/E_(%E6%95%B0%E5%AD%A6%E5%B8%B8%E6%95%B0)](https://zh.wikipedia.org/wiki/E_(数学常数))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
+第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理](https://zh.wikipedia.org/wiki/二项式定理)：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义](https://en.wikipedia.org/wiki/E_(mathematical_constant))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
 
 
 
@@ -494,13 +534,23 @@ $$
 
 ## 12.32
 
-参见12.31
+$$
+\sqrt{\frac{\left(\ln 2 / \delta^{\prime}\right)}{2 m}}=\frac{\epsilon}{2}
+$$
+
+[解析]：参见12.31
 
 
 
 ## 12.34
 
-参见12.31
+$$
+\sqrt{\frac{8 d \ln \frac{2 e m}{d}+8 \ln \frac{4}{\delta^{\prime}}}{m}}=\frac{\epsilon}{2}
+$$
+
+
+
+[解析]：参见12.31
 
 
 
@@ -509,7 +559,7 @@ $$
 $$
 \begin{aligned} \widehat{E}(h) &=\frac{1}{m} \sum_{i=1}^{m} \mathbb{I}\left(h\left(\boldsymbol{x}_{i}\right) \neq y_{i}\right) \\ &=\frac{1}{m} \sum_{i=1}^{m} \frac{1-y_{i} h\left(\boldsymbol{x}_{i}\right)}{2} \\ &=\frac{1}{2}-\frac{1}{2 m} \sum_{i=1}^{m} y_{i} h\left(\boldsymbol{x}_{i}\right) \end{aligned}
 $$
-[解析]：这里解释从第一步到第二步的推导，因为前提假设是2分类问题，$y_k\in\{-1, +1\}$，因此$\mathbb{I}\left(h(x_i)\neq y_i\right)\equiv \frac{1-y_i h(x_i)}{2}$。这是因为假如$y_i=+1, h(x_i)=+1$或$y_i=-1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=1= \frac{1-y_i h(x_i)}{2}$；反之，假如$y_i=-1, h(x_i)=+1$或$y_i=+1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=0= \frac{1-y_i h(x_i)}{2}$。
+[解析]：这里解释从第一步到第二步的推导，因为前提假设是2分类问题，$y_k\in\{-1, +1\}$，因此$\mathbb{I}\left(h(x_i)\neq y_i\right)\equiv \frac{1-y_i h(x_i)}{2}$。这是因为假如$y_i=+1, h(x_i)=+1$或$y_i=-1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=0= \frac{1-y_i h(x_i)}{2}$；反之，假如$y_i=-1, h(x_i)=+1$或$y_i=+1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=1= \frac{1-y_i h(x_i)}{2}$。
 
 
 
@@ -545,7 +595,7 @@ $$
 $$
 \widehat{R}_{Z}(\mathcal{F})=\mathbb{E}_{\boldsymbol{\sigma}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right]
 $$
-[解析]：对比式12.39，这里使用函数空间$\mathcal{F}$代替了假设空间$\mathcal{H}$，函数$f$代替了假设$h$，很容易理解，因为假设$h$即可以看做是作用在数据$x_i$上的一个映射，通过这个映射可以得到标签$y_i$。注意前提假设实值函数空间$\mathcal{F}:\mathcal{Z}\rightarrow\mathbb{R}$，即映射$f$将样本$z$隐射到了实数空间，这个时候所有的$\sigma_i$将是一个标量即$\sigma_i\in\{+1, -1\}$。
+[解析]：对比式12.39，这里使用函数空间$\mathcal{F}$代替了假设空间$\mathcal{H}$，函数$f$代替了假设$h$，很容易理解，因为假设$h$即可以看做是作用在数据$x_i$上的一个映射，通过这个映射可以得到标签$y_i$。注意前提假设实值函数空间$\mathcal{F}:\mathcal{Z}\rightarrow\mathbb{R}$，即映射$f$将样本$z_i$映射到了实数空间，这个时候所有的$\sigma_i$将是一个标量即$\sigma_i\in\{+1, -1\}$。
 
 
 
@@ -560,7 +610,6 @@ $$
 
 ## 12.42
 
-对实值函数空间$\mathcal{F}:\mathcal{Z}\rightarrow [0,1]$，根据分布$\mathcal{D}$从$\mathcal{Z}$中独立同分布采样得到示例集$Z=\{z_1,z_2,\dots,z_m\}, z_i\in\mathcal{Z},0<\delta<1$，对任意$f\in\mathcal{F}$，以至少$1-\delta$的概率有
 $$
 \begin{array}{l}{\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 R_{m}(\mathcal{F})+\sqrt{\frac{\ln (1 / \delta)}{2 m}}} \\ {\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}}\end{array}
 $$
@@ -610,61 +659,53 @@ $$
 
 第七行利用$\sigma$是对称的，所以$-\sigma$的分布和$\sigma$完全一致，所以可以将第二项中的负号去除，又因为$Z$和$Z^\prime$均是从$\mathcal{D}$中$i.i.d.$采样得到的数据，因此可以将第一项中的$z^\prime_i$替换成$z$，将$Z^\prime$替换成$Z$。
 
-最后根据定义式12.41可得$\mathbb{E}_{Z}[\Phi(Z)]=2\mathcal{R}_m(\mathcal{F})$，式12.24得证。
-
-[TODO]
+最后根据定义式12.41可得$\mathbb{E}_{Z}[\Phi(Z)]=2\mathcal{R}_m(\mathcal{F})$，式12.42得证。
 
 ## 12.43
 
-参见12.42
+$$
+\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}
+$$
+
+
+
+[解析]：参见12.42
 
 
 
 ## 12.44
 
-参见 12.42
+$$
+\Phi(Z) \leqslant \mathbb{E}_{Z}[\Phi(Z)]+\sqrt{\frac{\ln (1 / \delta)}{2 m}}
+$$
+
+
+
+[解析]：参见 12.42
 
 
 
 ## 12.45
 
-参见12.42
+$$
+R_{m}(\mathcal{F}) \leqslant \widehat{R}_{Z}(\mathcal{F})+\sqrt{\frac{\ln (2 / \delta)}{2 m}}
+$$
+
+
+
+[解析]：参见12.42
 
 
 
 ## 12.46
 
+$$
+\Phi(Z) \leqslant 2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}
+$$
+
+
+
 参见12.42
-
-
-
-## 12.47
-
-[TODO]
-
-
-
-## 12.48
-
-参见12.47
-
-
-
-## 12.49
-
-参见12.47
-
-
-
-## 12.50
-
-参见12.47
-
-
-
-## 12.51
-
-参见12.47
 
 
 
@@ -683,22 +724,6 @@ $$
 
 [解析]：根据式12.28有$\Pi_{\mathcal{H}}(m) \leqslant\left(\frac{e \cdot m}{d}\right)^{d}$，根据式12.52有$R_{m}(\mathcal{H}) \leqslant \sqrt{\frac{2 \ln \Pi_{\mathcal{H}}(m)}{m}}$，因此$\Pi_{\mathcal{H}}(m) \leqslant \sqrt{\frac{2 d \ln \frac{e m}{d}}{m}}$，再根据式12.47 $E(h) \leqslant \widehat{E}(h)+R_{m}(\mathcal{H})+\sqrt{\frac{\ln (1 / \delta)}{2 m}}$ 即证。
 
-## 12.54
-
-[解析]：定义式，无需证明。
-
-
-
-## 12.55
-
-[解析]：定义式，无需证明。
-
-
-
-## 12.56
-
-[解析]：定义式，无需证明。
-
 
 
 ## 12.57
@@ -713,13 +738,25 @@ $$
 
 ## 12.58
 
+$$
+\ell(\mathfrak{L}, \mathcal{D}) \leqslant \widehat{\ell}(\mathfrak{L}, D)+2 \beta+(4 m \beta+M) \sqrt{\frac{\ln (1 / \delta)}{2 m}}
+$$
+
+
+
 [证明]：比较繁琐，同书上所示，参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
 
 
 
 ## 12.59
 
-[证明]：比较繁琐，同书上所示，参见参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
+$$
+\ell(\mathfrak{L}, \mathcal{D}) \leqslant \ell_{l o o}(\mathfrak{L}, D)+\beta+(4 m \beta+M) \sqrt{\frac{\ln (1 / \delta)}{2 m}}
+$$
+
+
+
+[证明]：比较繁琐，同书上所示，参见[Mohri etc., 2012](https://cs.nyu.edu/~mohri/mlbook/)
 
 
 
@@ -739,9 +776,7 @@ $$
 
 若学习算法$\mathcal{L}$是ERM且是稳定的，则假设空间$\mathcal{H}$可学习。
 
-[解析]：首先明确几个概念，ERM表示算法$\mathcal{L}$满足经验风险最小化(Empirical Risk Minimization)，学习算法稳定表示。由于$\mathcal{L}$满足经验误差最小化，则可
-
-令$g$表示假设空间中具有最小泛化损失的假设，即
+[解析]：首先ERM表示算法$\mathcal{L}$满足经验风险最小化(Empirical Risk Minimization)。由于$\mathcal{L}$满足经验误差最小化，则可令$g$表示假设空间中具有最小泛化损失的假设，即
 $$
 \ell(g, \mathcal{D})=\min _{h \in \mathcal{H}} \ell(h, \mathcal{D})
 $$
@@ -749,7 +784,7 @@ $$
 $$
 \begin{array}{l}{\epsilon^{\prime}=\frac{\epsilon}{2}} \\ {\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}\end{array}
 $$
-将$\epsilon^\prime=\frac{\epsilon}{2}$带入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$，其中$\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，带入可得
+将$\epsilon^\prime=\frac{\epsilon}{2}$带入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$$P\left(\left\vert\frac{1}{m} \sum_{i=1}^{m} x_{i}-\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$$，其中$\frac{1}{m} \sum_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，带入可得
 $$
 P(|\ell(g, \mathcal{D})-\widehat{\ell}(g, D)| \geqslant \frac{\epsilon}{2})\leqslant \frac{\delta}{2}
 $$
@@ -769,8 +804,7 @@ $$
 $$
 P(\ell(\mathfrak{L}, \mathcal{D})-\ell(g, \mathcal{D})\leqslant\epsilon)\geqslant 1-\delta
 $$
-又因为$m$为关于$\left(1/\epsilon,1/\delta,\text{size}(x),\text{size}(c)\right)$的多项式，因此根据定理12.2，定理12.5，得到结论$\mathcal{H}$是(不可知)PAC可学习的。
-
+又因为$m$为与$\left(1/\epsilon,1/\delta,\text{size}(x),\text{size}(c)\right)$相关的多项式的值，因此根据定理12.2，定理12.5，得到结论$\mathcal{H}$是(不可知)PAC可学习的。
 
 
 

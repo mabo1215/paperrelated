@@ -12,15 +12,7 @@ $$
 \operatorname{Ent}(D)=-\sum_{i=1}^{| \mathcal{Y |}} p_{k} \log _{2} p_{k}
 $$
 
-[解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。此时必有$p_i=1, p_{\backslash i}=0, i=1, 2, \dots, \vert\mathcal{Y}\vert$。
-
-## 11.3
-
-定义式，无需证明
-
-## 11.4
-
-定义式，无需证明
+[解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。
 
 ## 11.5
 
@@ -36,7 +28,7 @@ $$
 \min _{\boldsymbol{w}} \sum_{i=1}^{m}\left(y_{i}-\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}\right)^{2}+\lambda\|\boldsymbol{w}\|_{2}^{2}
 $$
 
-[解析]：该式为加入了$\mathrm{L}_2$正规化项的优化目标，也叫”岭回归“，$\lambda$用来调节误差项和正规化项的相对重要性，引入正规化项的目的是为了防止$w$的分量过太而导致过拟合的风险。
+[解析]：该式为加入了$\mathrm{L}_2$正规化项的优化目标，也叫"岭回归"，$\lambda$用来调节误差项和正规化项的相对重要性，引入正规化项的目的是为了防止$w$的分量过太而导致过拟合的风险。
 
 ## 11.7
 
@@ -46,26 +38,18 @@ $$
 
 [解析]：该式将11.6中的$\mathrm{L}_2$正规化项替换成了$\mathrm{L}_1$正规化项，也叫LASSO回归。关于$\mathrm{L}_2$和$\mathrm{L}_1$两个正规化项的区别，原书图11.2给出了很形象的解释。具体来说，结合$\mathrm{L}_1$范数优化的模型参数分量更偏向于取0，因此更容易取得稀疏解。
 
-## 11.8
+## 11.10
 
-令$\nabla$表示微分算子，对优化目标
-$$
-\min _{\boldsymbol{x}} f(\boldsymbol{x})+\lambda\|\boldsymbol{x}\|_{1}
-$$
-若$f(x)$可到，且$\nabla f$可导，且$\nabla f$满足$L\mathrm{-Lipschitz}$条件，即存在常数$L>0$使得
-$$
-\left\|\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\|_{2}^{2} \leqslant L\left\|\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\|_{2}^{2} \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
-$$
-则在$x_k$附近可将$f(x)$通过二阶泰勒展开式近似为
 $$
 \begin{aligned}
 \hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
 &=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
 $$
+
 [解析]：首先注意优化目标式和11.7 LASSO回归的联系和区别，该式中的$x$对应到式11.7的$w$，即我们优化的目标。再解释下什么是[$L\mathrm{-Lipschitz}$条件](https://zh.wikipedia.org/wiki/利普希茨連續)，根据维基百科的定义：它是一个比通常[连续](https://zh.wikipedia.org/wiki/連續函數)更强的光滑性条件。直觉上，利普希茨连续函数限制了函数改变的速度，符合利普希茨条件的函数的斜率，必小于一个称为利普希茨常数的实数（该常数依函数而定）。
 
-注意这里可能存在一个笔误，在wiki百科的定义中，式11.7应该写成
+注意这里存在一个笔误，在wiki百科的定义中，式11.9应该写成
 $$
 \left\vert\nabla f\left(\boldsymbol{x}^{\prime}\right)-\nabla f(\boldsymbol{x})\right\vert \leqslant L\left\vert\boldsymbol{x}^{\prime}-\boldsymbol{x}\right\vert \quad\left(\forall \boldsymbol{x}, \boldsymbol{x}^{\prime}\right)
 $$
@@ -92,15 +76,9 @@ $$
 &=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
 $$
-其中$\mathrm{const}=f(x_k)--\frac{1}{2 L} \nabla f\left(x_{k}\right)^{\top} \nabla f\left(x_{k}\right)$
+其中$\mathrm{const}=f(x_k)-\frac{1}{2 L} \nabla f\left(x_{k}\right)^{\top} \nabla f\left(x_{k}\right)$
 
-## 11.9
 
-参见 11.8
-
-## 11.10
-
-参见11.8
 
 ## 11.11
 
@@ -154,24 +132,24 @@ $$
 $$
 其中
 $$
-\operatorname{sgn}\left(x^{i}\right)=\left\{\begin{array}{ll}
+\operatorname{sign}\left(x^{i}\right)=\left\{\begin{array}{ll}
 {1,} & {x^{i}>0} \\
 {-1,} & {x^{i}<0}
 \end{array}\right.
 $$
-称为[符号函数](https://zh.wikipedia.org/zh-hans/符号函数)，对于$x_i=0$的特殊情况，由于$\vert x_i \vert$在$x_i=0$点出不光滑，所以其不可导，需单独讨论。令$\frac{d g\left(x^{i}\right)}{d x^{i}}=0$有
+称为[符号函数](https://en.wikipedia.org/wiki/Sign_function)，对于$x_i=0$的特殊情况，由于$\vert x_i \vert$在$x_i=0$点出不光滑，所以其不可导，需单独讨论。令$\frac{d g\left(x^{i}\right)}{d x^{i}}=0$有
 $$
-x^{i}=z^{i}-\frac{\lambda}{L} \operatorname{sgn}\left(x^{i}\right)
+x^{i}=z^{i}-\frac{\lambda}{L} \operatorname{sign}\left(x^{i}\right)
 $$
 此式的解即为优化目标$g(x^i)$的极值点，因为等式两端均含有未知变量$x^i$，故分情况讨论。
 
 1. 当$z^i>\frac{\lambda}{L}$时：
 
-   a. 假设$x^i<0$，则$\textrm{sgn}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}>0$与假设矛盾；
+   a. 假设$x^i<0$，则$\operatorname{sign}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}>0$与假设矛盾；
 
-   b. 假设$x^i>0$，则$\textrm{sgn}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$和假设相符和，下面来检验$x^i=z^i-\frac{\lambda}{L}$是否是使函数$g(x^i)$的取得最小值。当$x^i<0$时，
+   b. 假设$x^i>0$，则$\operatorname{sign}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}>0$和假设相符合，下面来检验$x^i=z^i-\frac{\lambda}{L}$是否是使函数$g(x^i)$的取得最小值。当$x^i>0$时，
    $$
-   \frac{d g\left(x^{i}\right)}{d x^{i}}=L\left(x^{i}-z^{i}\right)-\lambda
+   \frac{d g\left(x^{i}\right)}{d x^{i}}=L\left(x^{i}-z^{i}\right)+\lambda
    $$
    在定义域内连续可导，则$g(x^i)$的二阶导数
    $$
@@ -181,27 +159,29 @@ $$
 
 2. 当$z_i<-\frac{\lambda}{L}$时：
 
-   a. 假设$x^i>0$，则$\textrm{sgn}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$与假设矛盾；
+   a. 假设$x^i>0$，则$\operatorname{sign}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}<0$与假设矛盾；
 
-   b. 假设$x^i<0$，则$\textrm{sgn}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}<0$与假设相符，由上述二阶导数恒大于0可知，$x^i=z^i+\frac{\lambda}{L}$是$g(x^i)$的最小值。
+   b. 假设$x^i<0$，则$\operatorname{sign}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}<0$与假设相符，由上述二阶导数恒大于0可知，$x^i=z^i+\frac{\lambda}{L}$是$g(x^i)$的最小值。
 
 3. 当$-\frac{\lambda}{L} \leqslant z_i \leqslant \frac{\lambda}{L}$时：
 
-   a. 假设$x^i>0$，则$\textrm{sgn}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}\leqslant 0$与假设矛盾；
+   a. 假设$x^i>0$，则$\operatorname{sign}(x^i)=1$，那么有$x^i=z^i-\frac{\lambda}{L}\leqslant 0$与假设矛盾；
 
-   b. 假设$x^i<0$，则$\textrm{sgn}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}\geqslant 0$与假设矛盾。
+   b. 假设$x^i<0$，则$\operatorname{sign}(x^i)=-1$，那么有$x^i=z^i+\frac{\lambda}{L}\geqslant 0$与假设矛盾。
 
 4. 最后讨论$x_i=0$的情况，此时$g(x^i)=\frac{L}{2}\left({z^i}\right)^2$
 
-   a. 当$\vert z^i\vert>\frac{\lambda}{L}$时，由上述推导可知$g(x_i)$的最小值在$x^i=z^i-\frac{\lambda}{L}$处取得，令
+   a. 当$\vert z^i\vert>\frac{\lambda}{L}$时，由上述推导可知$g(x_i)$的最小值在$x^i=z^i-\frac{\lambda}{L}$处取得，因为
    $$
-   \begin{align}
-   f(x^i)&=g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x_i=z^i-\frac{\lambda}{L}}\\
+   \begin{aligned}
+   g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x_i=z^i-\frac{\lambda}{L}}
    &=\frac{L}{2}\left({z^i}\right)^2 - \left(\lambda z^i-\frac{\lambda^2}{2L}\right)\\
    &=\frac{L}{2}\left(z^i-\frac{\lambda}{L}\right)^2\\
    &>0
-   \end{align}
+   \end{aligned}
    $$
+   
+
    因此当$\vert z^i\vert>\frac{\lambda}{L}$时，$x_i=0$不会是函数$g(x_i)$的最小值。
 
    b. 当$-\frac{\lambda}{L} \leqslant z_i \leqslant \frac{\lambda}{L}$时，对于任何$\Delta x\neq 0$有
@@ -209,8 +189,8 @@ $$
    \begin{aligned}
    g(\Delta x) &=\frac{L}{2}\left(\Delta x-z^{i}\right)^{2}+\lambda|\Delta x| \\
    &=\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}|\Delta x|\right)+\frac{L}{2}\left(z^{i}\right)^{2} \\
-   &>\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\
-   &>\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
+   &\ge\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\
+   &\ge\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
    &>g(x^i)\vert_{x^i=0}
    \end{aligned}
    $$
